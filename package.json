@@ -68,7 +68,12 @@
             "php"
           ],
           "description": "Using which language"
-        }
+        },
+		"leetcode.filePath": {
+		  "type": "string",
+		  "default": "",
+		  "description": "Path to save the code"
+		}
       }
     },
     "commands": [

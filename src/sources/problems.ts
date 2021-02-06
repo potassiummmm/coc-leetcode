@@ -91,7 +91,17 @@ export default class LeetcodeList implements IList {
             log(`mkdir fail: ${error}`);
           }
         }
-        const filePath = path.join(this.context.storagePath, `${detail.titleSlug}.${langs[this.language][0]}`);
+		const config = workspace.getConfiguration(extensionName)
+		isExists = await exists(config.get<string>('filePath',""))
+		let filePath: string = "";
+		if(isExists){
+		  filePath = path.join(config.get<string>('filePath',""), `${detail.questionId}.${detail.titleSlug}.${langs[this.language][0]}`)
+		}
+		else{
+		  filePath = path.join(this.context.storagePath, `${detail.questionId}.${detail.titleSlug}.${langs[this.language][0]}`);
+		}
+
+        //const filePath = path.join(this.context.storagePath, `${detail.questionId}.${detail.titleSlug}.${langs[this.language][0]}`);
         isExists = await exists(filePath);
         nvim.pauseNotification();
         // open new tab
