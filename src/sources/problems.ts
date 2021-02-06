@@ -92,7 +92,7 @@ export default class LeetcodeList implements IList {
           }
         }
 		const config = workspace.getConfiguration(extensionName);
-		let filePath: string = config.get<string>('filePath');
+		let filePath = config.get<string>('filePath', "");
 		isExists = await exists(filePath);
 		if(isExists){
 		  filePath = path.join(filePath, `${detail.questionId}.${detail.titleSlug}.${langs[this.language][0]}`);
