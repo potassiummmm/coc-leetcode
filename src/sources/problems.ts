@@ -100,6 +100,7 @@ export default class LeetcodeList implements IList {
 		else{
 		  filePath = path.join(this.context.storagePath, `${detail.questionId}.${detail.titleSlug}.${langs[this.language][0]}`);
 		}
+		isExists = await exists(filePath)
         nvim.pauseNotification();
         // open new tab
         nvim.command('tabnew', true);
