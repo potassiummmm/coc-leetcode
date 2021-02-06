@@ -21,6 +21,7 @@
 - `leetcode.language` 使用的目标语言
 - `leetcode.trace.server` 日志
 - `leetcode.enabled` 是否启用
+- `leetcode.filePath` 保存代码文件的路径
 
 ### 命令
 
