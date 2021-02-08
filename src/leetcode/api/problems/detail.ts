@@ -1,7 +1,6 @@
 import { Base } from '../base';
 import { graphqlTag } from '../../../util/string';
 import { logger } from '../../../util/logger';
-import htom from 'htom';
 import TurndownService from 'turndown';
 
 const log = logger.getlog('Problem detail');
