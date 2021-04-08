@@ -112,7 +112,7 @@ export default class LeetcodeList implements IList {
           [
             0,
             [
-              `# ${detail.questionId} ${detail.translatedTitle}`,
+              `# ${detail.questionFrontendId} ${detail.ugcQuestionId} ${detail.questionId} ${detail.translatedTitle}`,
               '',
               `> 难度: ${detail.difficulty} | 通过率：${detail.stats.acRate} | 通过次数：${detail.stats.totalAcceptedRaw} | 提交次数：${detail.stats.totalSubmissionRaw}`,
               '',
