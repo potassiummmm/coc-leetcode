@@ -95,10 +95,10 @@ export default class LeetcodeList implements IList {
 		let filePath = config.get<string>('filePath', "");
 		isExists = await exists(filePath);
 		if(isExists){
-		  filePath = path.join(filePath, `${detail.questionId}.${detail.titleSlug}.${langs[this.language][0]}`);
+		  filePath = path.join(filePath, `${detail.questionFrontendId}.${detail.titleSlug}.${langs[this.language][0]}`);
 		}
 		else{
-		  filePath = path.join(this.context.storagePath, `${detail.questionId}.${detail.titleSlug}.${langs[this.language][0]}`);
+		  filePath = path.join(this.context.storagePath, `${detail.questionFrontendId}.${detail.titleSlug}.${langs[this.language][0]}`);
 		}
 		isExists = await exists(filePath)
         nvim.pauseNotification();
@@ -112,7 +112,7 @@ export default class LeetcodeList implements IList {
           [
             0,
             [
-              `# ${detail.questionFrontendId} ${detail.ugcQuestionId} ${detail.questionId} ${detail.translatedTitle}`,
+              `# ${detail.questionFrontendId} ${detail.translatedTitle}`,
               '',
               `> 难度: ${detail.difficulty} | 通过率：${detail.stats.acRate} | 通过次数：${detail.stats.totalAcceptedRaw} | 提交次数：${detail.stats.totalSubmissionRaw}`,
               '',

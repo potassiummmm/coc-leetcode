@@ -157,7 +157,7 @@ export class Detail extends Base {
     const detail = res.data.question;
     try {
       detail.stats = JSON.parse(detail.stats);
-      detail.translatedContent = ((await turndownService.turndown(detail.translatedContent || '')) as string)
+      detail.translatedContent = ((turndownService.turndown(detail.translatedContent || '')) as string)
         .replace(/&nbsp;/g, ' ')
         .trim();
     } catch (error) {
