@@ -1,7 +1,6 @@
 import { Base } from '../base';
 import { graphqlTag } from '../../../util/string';
 import { logger } from '../../../util/logger';
-import TurndownService from 'turndown';
 
 const log = logger.getlog('Problem detail');
 
@@ -152,12 +151,11 @@ export class Detail extends Base {
 
   async request(slug: string): Promise<ProblemDetail> {
     const res = await super.request(slug);
-	var turndownService = new TurndownService();
 
     const detail = res.data.question;
     try {
       detail.stats = JSON.parse(detail.stats);
-      detail.translatedContent = ((turndownService.turndown(detail.translatedContent || '')) as string)
+      detail.translatedContent = (detail.translatedContent || '' as string)
         .replace(/&nbsp;/g, ' ')
         .trim();
     } catch (error) {
