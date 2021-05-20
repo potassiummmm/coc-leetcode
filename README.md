@@ -2,10 +2,14 @@
 
 ![image](https://user-images.githubusercontent.com/5492542/82134259-a73b0c00-9828-11ea-9c73-e4ab21c61351.png)
 
+## 说明
+LeetCode vim/neovim插件, forked from [iamcco/coc-leetcode](https://github.com/iamcco/coc-leetcode)
+
 ## 安装
 
+使用插件管理器(如[vim-plug](https://github.com/junegunn/vim-plug))
 ```vim
-:CocInstall coc-leetcode
+Plug 'potassiummmm/coc-leetcode', {'do': 'yarn install --frozen-lockfile && yarn build'}
 ```
 
 ## 使用
@@ -30,8 +34,3 @@
 - `leetcode.submit` 提交当前代码
 - `leetcode.comments` 查看当前算法用户评论
 
-### Buy Me A Coffee ☕️
-
-![btc](https://img.shields.io/keybase/btc/iamcco.svg?style=popout-square)
-
-![image](https://user-images.githubusercontent.com/5492542/42771079-962216b0-8958-11e8-81c0-520363ce1059.png)
